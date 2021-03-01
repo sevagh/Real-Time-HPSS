@@ -1,3 +1,9 @@
+**:warning: WARNING 2020-03-01 :warning:**
+
+The Python version of the code is buggy - the overlap-add reconstruction is incorrect. I believe it only works by luck.
+
+The MATLAB version works fine. Also, I recommend you look at [Zen](https://github.com/sevagh/Zen), another one of my projects written in C++ and CUDA which is a very fast (160us!) implementation of the realtime HPSS idea, with correct overlap-add.
+
 # Real-Time-HPSS
 
 This repository contains a real-time implementation of the median-filtering HPSS algorithm [[1]](http://dafx10.iem.at/papers/DerryFitzGerald_DAFx10_P15.pdf), [[2]](https://www.audiolabs-erlangen.de/content/05-fau/assistant/00-driedger/01-publications/2014_DriedgerMuellerDisch_ExtensionsHPSeparation_ISMIR.pdf).
@@ -79,7 +85,7 @@ Real-time percussive separation:
     * HPSSWav.m - a file that loads a wav file and applies HPSS.m
     * HPSSMicrophone.m - a real-time implementation that separates and outputs percussive or harmonic separations of the microphone input in real-time
     * HPSSRtWav.m - a modification of HPSSMicrophone.m to test the real-time implementation with wav files
-* python - python library + class, `from hpss_rt import HPSSRT`
+* python (**nb!** buggy/suspicious STFT reconstruction) - python library + class, `from hpss_rt import HPSSRT`
 
 ### About this project
 
